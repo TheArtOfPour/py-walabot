@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 filename = 'feed.json'
 
@@ -13,4 +15,4 @@ def get_image_energy():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='localhost')
